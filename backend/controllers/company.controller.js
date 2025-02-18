@@ -2,7 +2,8 @@ import { docClient, dynamoDB } from "../config/aws.config.js";
 import getdataUri from '../utils/datauri.js';
 import cloudinary from "../utils/cloudinary.js";
 import { v4 as uuidv4 } from 'uuid';
-
+import { uploadToS3 } from '../utils/s3Utils.js'; // Adjust path as needed
+import { DeleteObjectCommand } from "@aws-sdk/client-s3";
 
 
 //register Compnay
@@ -169,8 +170,7 @@ export const getCompanyById = async (req, res) => {
 
 
 //update company
-import { uploadToS3 } from '../utils/s3Utils.js'; // Adjust path as needed
-import { DeleteObjectCommand } from "@aws-sdk/client-s3";
+
 
 export const updateCompany = async (req, res) => {
   try {

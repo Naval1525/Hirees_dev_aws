@@ -64,10 +64,10 @@ export const SavedJobsTable = {
 export const createSavedJobsTable = async () => {
   try {
     await client.createTable(SavedJobsTable);
-    console.log("SavedJobs table created successfully");
+
   } catch (error) {
     if (error.name === "ResourceInUseException") {
-      console.log("SavedJobs table already exists");
+
     } else {
       console.error("Error creating SavedJobs table:", error);
       throw error;

@@ -15,7 +15,6 @@ function CompanySetup() {
   const { singleCompany } = useSelector((store) => store.company);
   const param = useParams();
 
-  console.log(param.id);
 
   useGetCompanyById(param.id);
 

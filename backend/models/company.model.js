@@ -62,10 +62,10 @@ export const CompanyTable = {
 export const createCompanyTable = async () => {
   try {
     await client.createTable(CompanyTable);
-    console.log("Companies table created successfully");
+
   } catch (error) {
     if (error.name === "ResourceInUseException") {
-      console.log("Companies table already exists");
+
     } else {
       console.error("Error creating Companies table:", error);
       throw error;

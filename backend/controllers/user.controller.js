@@ -31,56 +31,87 @@ const emailTemplates = {
     <html>
     <head>
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #4A90E2; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
-        .content { background-color: #ffffff; padding: 20px; border-radius: 0 0 5px 5px; border: 1px solid #dedede; }
+        body {
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          color: #333333;
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+        }
+        .header {
+          background-color: #1a365d;
+          color: white;
+          padding: 30px 20px;
+          text-align: center;
+        }
+        .content {
+          background-color: #ffffff;
+          padding: 40px 30px;
+          border: 1px solid #e5e5e5;
+        }
+        .footer {
+          background-color: #f8f9fa;
+          padding: 20px;
+          text-align: center;
+          color: #666666;
+          font-size: 14px;
+        }
+        h1 {
+          margin: 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        h2 {
+          color: #1a365d;
+          font-size: 20px;
+          margin-top: 0;
+        }
+        ul {
+          padding-left: 20px;
+          margin: 15px 0;
+        }
+        li {
+          margin-bottom: 10px;
+          color: #333333;
+        }
+        p {
+          margin: 15px 0;
+          color: #333333;
+        }
+        .highlight {
+          color: #1a365d;
+          font-weight: 600;
+        }
       </style>
     </head>
     <body>
       <div class="container">
         <div class="header">
-          <h1>Welcome to Our Platform!</h1>
+          <h1>Welcome to Our Platform</h1>
         </div>
         <div class="content">
-          <h2>Hello ${fullname}!</h2>
-          <p>Thank you for registering as a ${role} on our platform. We're excited to have you join our community!</p>
+          <h2>Dear ${fullname},</h2>
+          <p>Thank you for joining our professional community as a <span class="highlight">${role}</span>. We're delighted to have you on board.</p>
           ${role === 'student' ?
-            `<p>As a student, you'll have access to:</p>
+            `<p>As a student member, you now have access to:</p>
             <ul>
-              <li>Job postings tailored to your profile</li>
-              <li>Resume building tools</li>
-              <li>Career guidance resources</li>
+              <li>Exclusive job opportunities aligned with your career goals</li>
+              <li>Professional resume building and optimization tools</li>
+              <li>Expert career guidance and industry insights</li>
+              <li>Networking opportunities with industry professionals</li>
             </ul>` :
-            `<p>You'll have access to our platform's features and resources designed specifically for ${role}s.</p>`
+            `<p>As a ${role}, you now have full access to our platform's professional suite of tools and resources designed to enhance your experience.</p>`
           }
-          <p>If you have any questions, feel free to reach out to our support team.</p>
+          <p>Should you have any questions or require assistance, our dedicated support team is here to help.</p>
+          <p>Best regards,<br>The Platform Team</p>
         </div>
-      </div>
-    </body>
-    </html>
-  `,
-
-  profileUpdate: (fullname) => `
-    <!DOCTYPE html>
-    <html>
-    <head>
-      <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #28a745; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
-        .content { background-color: #ffffff; padding: 20px; border-radius: 0 0 5px 5px; border: 1px solid #dedede; }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <div class="header">
-          <h1>Profile Updated</h1>
-        </div>
-        <div class="content">
-          <h2>Hello ${fullname}!</h2>
-          <p>Your profile has been successfully updated.</p>
-          <p>If you didn't make these changes, please contact our support team immediately.</p>
+        <div class="footer">
+          © ${new Date().getFullYear()} Your Platform Name. All rights reserved.
         </div>
       </div>
     </body>
@@ -92,30 +123,101 @@ const emailTemplates = {
     <html>
     <head>
       <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-        .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-        .header { background-color: #ffc107; color: white; padding: 20px; text-align: center; border-radius: 5px 5px 0 0; }
-        .content { background-color: #ffffff; padding: 20px; border-radius: 0 0 5px 5px; border: 1px solid #dedede; }
+        body {
+          font-family: 'Arial', sans-serif;
+          line-height: 1.6;
+          color: #333333;
+          margin: 0;
+          padding: 0;
+        }
+        .container {
+          max-width: 600px;
+          margin: 0 auto;
+          padding: 0;
+        }
+        .header {
+          background-color: #1a365d;
+          color: white;
+          padding: 30px 20px;
+          text-align: center;
+        }
+        .content {
+          background-color: #ffffff;
+          padding: 40px 30px;
+          border: 1px solid #e5e5e5;
+        }
+        .footer {
+          background-color: #f8f9fa;
+          padding: 20px;
+          text-align: center;
+          color: #666666;
+          font-size: 14px;
+        }
+        h1 {
+          margin: 0;
+          font-size: 24px;
+          font-weight: 600;
+        }
+        h2 {
+          color: #1a365d;
+          font-size: 20px;
+          margin-top: 0;
+        }
+        .info-box {
+          background-color: #f8f9fa;
+          border-left: 4px solid #1a365d;
+          padding: 15px;
+          margin: 20px 0;
+        }
+        .alert {
+          color: #721c24;
+          background-color: #f8d7da;
+          border: 1px solid #f5c6cb;
+          padding: 15px;
+          margin: 20px 0;
+          border-radius: 4px;
+        }
+        .info-label {
+          font-weight: 600;
+          color: #1a365d;
+          display: inline-block;
+          width: 100px;
+        }
       </style>
     </head>
     <body>
       <div class="container">
         <div class="header">
-          <h1>New Login Detected</h1>
+          <h1>Security Alert</h1>
         </div>
         <div class="content">
-          <h2>Hello ${fullname}!</h2>
-          <p>A new login was detected on your account.</p>
-          <p>Time: ${loginTime}</p>
-          <p>Device Info: ${deviceInfo}</p>
-          <p>If this wasn't you, please secure your account immediately.</p>
+          <h2>Dear ${fullname},</h2>
+          <p>We detected a new login to your account. Please review the details below:</p>
+
+          <div class="info-box">
+            <p><span class="info-label">Time:</span> ${loginTime}</p>
+            <p><span class="info-label">Device:</span> ${deviceInfo}</p>
+          </div>
+
+          <div class="alert">
+            If you don't recognize this activity, please secure your account immediately by:
+            <ul>
+              <li>Changing your password</li>
+              <li>Enabling two-factor authentication</li>
+              <li>Contacting our support team</li>
+            </ul>
+          </div>
+
+          <p>Best regards,<br>The Security Team</p>
+        </div>
+        <div class="footer">
+          © ${new Date().getFullYear()} Your Platform Name. All rights reserved.
         </div>
       </div>
     </body>
     </html>
   `
 };
-
 // Send email function
 const sendEmail = async (type, userEmail, data) => {
   try {
@@ -144,7 +246,7 @@ const sendEmail = async (type, userEmail, data) => {
     };
 
     await transporter.sendMail(mailOptions);
-    console.log(`${type} email sent successfully to ${userEmail}`);
+
     return true;
   } catch (error) {
     console.error(`Failed to send ${type} email:`, error);
@@ -199,12 +301,7 @@ const sendEmail = async (type, userEmail, data) => {
         });
       }
 
-      // const file = req.file;
-      // let cloudResponse;
-      // if (file) {
-      //   const fileUri = dataUri(file);
-      //   cloudResponse = await cloudinary.uploader.upload(fileUri.content);
-      // }
+
       const file = req.file;
       let s3Response;
       if (file) {

@@ -120,6 +120,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home";
 import Company from "./components/Company";
 import CompanyJobs from "./components/CompanyJobs";
+import ContactPage from "./components/ContactPage";
 
 // Lazy load everything else
 const Login = lazy(() => import("./components/auth/Login"));
@@ -186,6 +187,14 @@ const appRouter = createBrowserRouter([
     element: (
       <Suspense fallback={<div>Loading...</div>}>
         <Jobs />
+      </Suspense>
+    ),
+  },
+  {
+    path: "/contactUs",
+    element: (
+      <Suspense fallback={<div>Loading...</div>}>
+       <ContactPage></ContactPage>
       </Suspense>
     ),
   },

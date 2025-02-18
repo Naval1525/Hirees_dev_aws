@@ -6,6 +6,7 @@ import {
   getJobById,
   updateJob,
   getCompanyJobs,
+  getLatestJobs,
 
 
 } from "../controllers/job.controller.js";
@@ -21,8 +22,9 @@ const router = express.Router();
 
 router.post("/postJob", isAuth,singleUpload, postJob);
 router.get("/get",  getAllJobs);
+router.get("/getlatest",  getLatestJobs);
 router.get("/getadminjobs", isAuth, getAdminJobs);
-router.get("/get/:id", isAuth, getJobById);
+router.get("/get/:id", getJobById);
 router.put('/:jobId', updateJob);
 router.get('/getCompanyJobs/:id', getCompanyJobs);
 

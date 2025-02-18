@@ -21,7 +21,7 @@ const port = process.env.PORT || 3001;
 // app.use(bodyParser.json()); // Parse JSON
 // app.use(bodyParser.urlencoded({ extended: true }));
 const _dirname = path.resolve();
-console.log(_dirname);
+
 
 
 const allowedOrigins = [
@@ -29,7 +29,7 @@ const allowedOrigins = [
     'http://www.hirees.ai', 'https://www.hirees.ai', 'https://hirees.ai', 'http://hirees.ai',
     'http://3.135.232.113:5173', 'https://3.135.232.113:5173',
     'http://www.3.135.232.113:5173', 'https://www.3.135.232.113:5173',
-    'https://job-portal-lavu.onrender.com', 'http://localhost:5173','https://www.hirees.com/','http://3.232.10.54','http://3.232.10.54/'
+    'https://job-portal-lavu.onrender.com', 'http://localhost:5173','https://www.hirees.com/'
 ];
 
 // Unified CORS configuration
@@ -97,7 +97,7 @@ app.use((req, res) => {
 // Start server
 const startServer = async () => {
     try {
-        await connectDB();
+        // await connectDB();
         app.listen(port, () => {
             console.log(`Server is running on port ${port}`);
         });
