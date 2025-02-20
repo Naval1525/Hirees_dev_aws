@@ -29,7 +29,7 @@ const allowedOrigins = [
     'http://www.hirees.ai', 'https://www.hirees.ai', 'https://hirees.ai', 'http://hirees.ai',
     'http://3.135.232.113:5173', 'https://3.135.232.113:5173',
     'http://www.3.135.232.113:5173', 'https://www.3.135.232.113:5173',
-    'https://job-portal-lavu.onrender.com', 'http://localhost:5173','https://www.hirees.com/'
+    'https://job-portal-lavu.onrender.com', 'http://localhost:5173','https://www.hirees.com/','http://localhost:5173'
 ];
 
 // Unified CORS configuration
